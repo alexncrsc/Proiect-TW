@@ -1,0 +1,607 @@
+/* stiluri de menu */
+/* stilul principal de navigat, background , inline block display, spatiere de 10 pixeli sus si jos, stanga dreapta 20*/
+nav ul li {
+  background-color: black;
+  display: inline-block;
+  position: relative;
+  padding: 10px 20px;
+}
+/* schimbare de culoare in background la itemle de navigare in negru inchis , cand apare efectul de hovering*/
+nav ul li:hover {
+  background-color: #444;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+/* culoare alba la itemele de navigare, fara text */
+nav ul li ul {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: none;
+}
+
+/* pozitionare ascunsa prima data */
+nav ul li:hover > ul {
+  display: block;
+}
+/*meniuri de tip dropdown submeniuri, background negru. 10 pixeli sus si jos, 20 stanga dreapta*/
+nav ul li ul li {
+  display: block;
+  background-color: black;
+  padding: 10px 20px;
+}
+
+nav ul li ul li:hover {
+  background-color: #444;
+}
+
+/* culoare alba*/
+nav ul li ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+/* cod pentru linia orizontala care isi schimba gradientul de la 0 la 100*/
+nav ul li:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(to right, black, white);
+  transition: width 0.3s ease-out;
+}
+/* efect fals prin before pentru fiecare li, in ul-uri sin stanga jos catre coltul de iteme, de la 0% gradient*/
+nav ul li:hover:before {
+  width: 100%;
+}
+/* se schimba la 100% trecand de la before-ul "fals" */
+
+/* efect de submenuiu */
+nav ul li ul:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scaleY(0); /* initial e invizibil*/
+  width: 100%;
+  height: 1px;
+  background-color: white;
+  transition: transform 0.3s ease-out;
+}
+
+nav ul li ul:hover:before {
+  transform: translate(-50%, -50%) scaleY(1);
+}
+
+/*se schimba culoarea in alb*/
+
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+
+/*stralucire meniu */
+
+nav li:hover::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 120%;
+  height: 3px;
+  background: linear-gradient(to right, #000, #fff);
+  transform: translateY(-50%);
+  animation: gradient 0.5s forwards;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* aspect pagina si everything */
+
+nav ul ul li:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+
+
+body{
+    --culoare-mov:#C3FAD5;
+    --roz-deschis:#C8E3AA;
+    --culoare-fundal:#C3FAD5;
+    --culoare-text: #000000;
+    --spatiere-pagina:30px;
+}
+
+body.dark{
+    --culoare-fundal:#black;
+    --culoare-text:#C3FAD5;
+}
+
+
+
+body{
+    background-color: var(--culoare-fundal);
+    color:var(--culoare-text);
+    padding-left:var(--spatiere-pagina);
+    padding-right:var(--spatiere-pagina);
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+#grid-pagina > *{
+    border: 3px solid green;
+}
+#grid-pagina{
+    display:grid;
+    grid-template-areas: 
+        "z-index-welcome z-index-welcome z-index-welcome z-index-welcome"
+        "z-index-welcome z-index-welcome z-index-welcome z-index-welcome"
+        "z-fig1 z-produse z-produse z-promotii"
+        "z-fig3 z-produse z-produse z-promotii "
+        "z-fig3 z-anunturi z-anunturi z-fig2"
+        "z-index-intrebari z-index-intrebari z-index-intrebari z-index-intrebari"
+        "z-welcome z-welcome z-welcome z-welcome"
+                        ;
+        grid-template-columns: repeat(4, 1fr); 
+    grid-template-rows: repeat(7, auto);
+}
+
+#welcome{
+    grid-area: z-welcome;
+}
+#promotii{
+    grid-area: z-promotii;
+}
+#produse{
+    grid-area: z-produse;
+}
+
+
+
+#fig1{
+    grid-area: z-fig1;
+    }
+#fig2{
+    grid-area: z-fig2;
+}
+#fig3{
+    grid-area: z-fig3;
+}
+
+#anunturi{
+    grid-area: z-anunturi;
+}
+
+#index-intrebari{
+    grid-area: z-index-intrebari;
+}
+.taburi-iframe {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  height: 50px;
+  padding: 0 20px;
+}
+
+.taburi-iframe a {
+  display: block;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+/* animatii butoane espresso, v60, ceai */
+.taburi-iframe a::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.taburi-iframe a:hover {
+  color: #fff;
+}
+
+.taburi-iframe a:hover::before {
+  width: 50px;
+  height: 50px;
+  opacity: 1;
+}
+
+/*tabel */
+
+	table caption {
+		font-size: 1.5em;
+		font-weight: bold;
+		margin-bottom: 10px;
+		text-align: left;
+	}
+
+	table thead {
+		background-color: #f2f2f2;
+	}
+
+	table tbody tr:nth-child(even) {
+		background-color: #e6e6ff;
+	}
+
+	table td, table th {
+		padding: 10px;
+		border: 2px solid #ddd;
+	}
+
+	table td:hover {
+		background-color: rgba(0,0,0,0.1);
+		transition: background-color 0.3s ease;
+	}
+
+	.container {
+		overflow-x: auto;
+	}
+ /* video*/
+	@media only screen and (max-width: 768px) {
+		table {
+			font-size: 0.8em;
+		}
+
+		table td, table th {
+			padding: 5px;
+		}
+
+		.container {
+			overflow-x: scroll;
+		}
+	}
+
+/*buton de scroll in sus*/
+
+.scroll-top {
+  display: block;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border: 1px solid #ccc;
+  background-color: #f2f2f2;
+  color: #333;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px 0 0 10px;
+  transform: rotate(-90deg);
+  box-shadow: inset 0 0 10px rgba(255,255,255,0.5), 0 2px 5px rgba(0,0,0,0.3);
+  opacity: 0.7;
+  transition: all 0.5s ease;
+  z-index: 999;
+}
+ /*animatii*/
+ 
+.scroll-top:hover {
+  background-color: #333;
+  color: #fff;
+  opacity: 1;
+  transform: rotate(-90deg) scale(1.1);
+}
+
+.scroll-top .arrow {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 24px;
+  vertical-align: middle;
+  transform: rotate(90deg);
+}
+
+.scroll-top .tooltip {
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px;
+  background-color: rgba(0,0,0,0.8);
+  color: #fff;
+  font-size: 12px;
+  border-radius: 3px;
+}
+
+.scroll-top:hover .tooltip {
+  display: block;
+}
+
+
+
+
+
+
+/* Reducerea spațierii pentru ecranele medii */
+@media screen and (max-width: 768px) {
+  .grid {
+    grid-gap: 10px;
+  }
+}
+
+/* Reducerea spațierii pentru ecranele mici */
+@media screen and (max-width: 480px) {
+  .grid {
+    grid-gap: 5px;
+  }
+}
+
+/* Background de culoare diferită pentru header */
+header {
+  background-color: #e6e6e6;
+}
+
+/* Border pentru footer */
+footer {
+  border-top: 1px solid #ccc;
+  padding: 10px;
+}
+
+/* Colțuri rotunjite ale box-ului pentru grid */
+.grid {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+:root {
+  --text-padding: 10px;
+}
+
+/* padding pt toate elementele */
+.header h1,
+.grid .box {
+  padding: var(--text-padding);
+}
+body{
+$primary-color: #006699;
+$secondary-color: #ffcc00;
+}
+body {
+  --primary-color: #($primary-color);
+  --secondary-color: #($secondary-color);
+}
+
+nav {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+nav ul li:hover {
+  background-color: var(--secondary-color);
+}
+nav ul li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -10%;
+  width: 120%;
+  height: 100%;
+  background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  opacity: 0;
+  transition: opacity 0.2s linear;
+}
+
+nav ul li:hover::before {
+  opacity: 1;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav li {
+  margin: 0 10px;
+}
+
+main {
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+footer {
+  border: 4px inset #000;
+  text-align: center;
+  padding: 20px;
+}
+/* de lucrul la el*/
+.watermark {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 4cm;
+  height: 1cm;
+  opacity: 0.4;
+  border: 3px solid #000;
+  border-radius: 10px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+@media print {
+  * {
+    color: black !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  img, video, iframe {
+    display: none;
+  }
+
+  a {
+    text-decoration: none !important;
+    color: black !important;
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  main {
+    page-break-after: always;
+    display: block !important;
+  }
+
+  footer {
+    page-break-before: always;
+  }
+
+  @page {
+    margin-left: 3cm;
+    margin-right: 1cm;
+  }
+
+  @page :right {
+    margin-left: 1cm;
+    margin-right: 3cm;
+  }
+}
+//video vtt
+WEBVTT
+
+STYLE
+::cue {
+  background-color: transparent;
+  color: white;
+  text-shadow: 0 0 2px black;
+}
+
+/*stilizare link-uri*//
+
+:root {
+  --link-color: #007bff;
+  --link-visited-color: #4a4a4a;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+a:visited {
+  color: var(--link-visited-color);
+}
+
+a[href^="http"]::before {
+  content: "⮳";
+  font-size: 150%;
+  margin-right: 0.3em;
+}
+
+a[href^="http"]:hover::before {
+  color: #0056b3;
+}
+
+.main a {
+  position: relative;
+  display: inline-block;
+  padding: 0.2em 0.5em;
+}
+
+.main a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background-image: radial-gradient(circle at 40% 40%, var(--link-color) 0%, var(--link-color) 40%, transparent 80%, transparent 100%);
+  background-size: 0;
+  background-position: center;
+  transition: background 0.2s ease-in-out;
+}
+
+.main a:hover::before {
+  background-size: 100%;
+  width: 150%;
+  height: 150%;
+}
+
+/*5 1 */
+hr {
+  position: relative;
+  height: 2px;
+  border: none;
+  background-color: #00cc99;
+  margin: 20px 0;
+}
+
+hr::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: calc(50% - 8px);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #00cc99;
+  box-shadow: 0 0 0 4px #00ffcc;
+}

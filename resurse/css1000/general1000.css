@@ -1,0 +1,25 @@
+#grid-pagina {
+display: grid;
+grid-template-areas:
+"z-index-welcome z-index-welcome"
+"z-index-welcome z-index-welcome"
+"z-index-welcome z-index-welcome "
+"z-index-welcome z-index-welcome"
+"z-fig2 z-produse"
+"z-produse z-promotii"
+"z-fig3 z-produse"
+"z-produse z-promotii "
+"z-fig3 z-anunturi"
+"z-anunturi z-fig1"
+"z-index-intrebari z-index-intrebari z-index-intrebari z-index-intrebari"
+"z-welcome z-welcome"
+"z-welcome z-welcome"
+;
+grid-template-columns: repeat(2, 1fr);
+grid-template-rows: repeat(13, auto);
+}
+
+body{
+  
+    --spatiere-pagina:30px;
+}
